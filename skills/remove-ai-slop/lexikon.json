@@ -1,0 +1,195 @@
+{
+  "version": 1,
+  "note": "Die 48 Formen und ihre Suchmuster. Zum Bearbeiten gedacht: Muster sind reguläre Ausdrücke (Python, ohne Groß-/Kleinschreibung). Formen mit \"urteil\": true findet kein Muster, sie prüft Claude beim Lesen. Formen mit \"code\": true erkennt slop.py über eigene Regeln (Satzlängen, Listen, Zeichen); ihre Muster hier ergänzen diese Regeln.",
+  "formen": [
+    {"nr": 1, "id": "modewoerter", "name": "Modewörter", "gruppe": "Wortwahl", "kurz": "Wörter, die Gewicht behaupten, ohne es zu liefern: entscheidend, nahtlos, robust, eintauchen.",
+     "de": ["\\bentscheidend(?:e[nmrs]?)?\\b", "\\bessen[zt]iell(?:e[nmrs]?)?\\b", "\\bnahtlos(?:e[nmrs]?)?\\b", "\\brobust(?:e[nmrs]?)?\\b", "\\bmaßgeblich(?:e[nmrs]?)?\\b", "\\bganzheitlich(?:e[nmrs]?)?\\b", "\\bbahnbrechend(?:e[nmrs]?)?\\b", "\\btransformativ(?:e[nmrs]?)?\\b", "\\binnovativ(?:e[nmrs]?)?\\b", "\\bunerlässlich(?:e[nmrs]?)?\\b", "\\bunverzichtbar(?:e[nmrs]?)?\\b", "\\bvielschichtig(?:e[nmrs]?)?\\b", "\\bfacettenreich(?:e[nmrs]?)?\\b", "\\bzukunftsweisend(?:e[nmrs]?)?\\b", "\\bwegweisend(?:e[nmrs]?)?\\b", "\\bbeleucht(?:en|et|e)\\b", "\\beintauchen\\b", "\\btauch(?:en|t) (?:wir |tief )?ein\\b", "\\bMehrwert(?:s)?\\b", "\\bGamechanger\\b", "\\bGame[- ]Changer\\b", "\\bSynergien?\\b", "\\bPotenziale? (?:entfalten|heben|freisetzen)\\b", "\\bauf das nächste Level\\b", "\\bLandschaft\\b(?= der| des| von)"],
+     "en": ["\\bcrucial\\b", "\\bpivotal\\b", "\\bvital\\b", "\\brobust\\b", "\\bseamless(?:ly)?\\b", "\\bleverag(?:e|es|ed|ing)\\b", "\\bdelv(?:e|es|ed|ing)\\b", "\\bholistic\\b", "\\bgroundbreaking\\b", "\\btransformative\\b", "\\bgame[- ]chang(?:er|ing)\\b", "\\bunlock(?:s|ing)? the\\b", "\\bharness(?:es|ing)?\\b", "\\bfoster(?:s|ing)?\\b", "\\bmultifaceted\\b", "\\blandscape\\b(?= of)", "\\brealm\\b", "\\bparadigm shift\\b", "\\bnext level\\b"]},
+
+    {"nr": 2, "id": "gespreizt", "name": "Gespreiztes Register", "gruppe": "Wortwahl", "kurz": "Amtsdeutsch und Fremdwort statt des einfachen Worts: implementieren, gewährleisten, verwenden statt nutzen.",
+     "de": ["\\bimplementier(?:en|t|te|ten)\\b", "\\bgewährleist(?:en|et|ete)\\b", "\\bsicherstell(?:en|t)\\b", "\\bsichergestellt\\b", "\\bevaluier(?:en|t|te)\\b", "\\bpriorisier(?:en|t|te)\\b", "\\badressier(?:en|t|te)\\b", "\\bgenerier(?:en|t|te)\\b", "\\bfokussier(?:en|t|te)\\b", "\\bidentifizier(?:en|t|te)\\b", "\\bin Anspruch (?:nehmen|genommen)\\b", "\\bInanspruchnahme\\b", "\\bhinsichtlich\\b", "\\bdiesbezüglich\\b", "\\bseitens\\b", "\\bmittels\\b", "\\bnichtsdestotrotz\\b", "\\bzweifelsohne\\b", "\\bselbstredend\\b", "\\bmithin\\b"],
+     "en": ["\\butiliz(?:e|es|ed|ing|ation)\\b", "\\bcommenc(?:e|es|ed|ing)\\b", "\\bfacilitat(?:e|es|ed|ing)\\b", "\\bendeavou?r\\b", "\\bin order to\\b", "\\bprior to\\b", "\\bsubsequently\\b", "\\bnevertheless\\b", "\\bnotwithstanding\\b", "\\bascertain\\b"]},
+
+    {"nr": 3, "id": "purple-prose", "name": "Purple Prose", "gruppe": "Wortwahl", "kurz": "Überladene, blumige Sprache: Adjektivketten, Teppiche, Symphonien und Tänze, wo eine schlichte Aussage reicht.",
+     "de": ["\\batemberaubend(?:e[nmrs]?)?\\b", "\\bmajestätisch(?:e[nmrs]?)?\\b", "\\bschillernd(?:e[nmrs]?)?\\b", "\\bpulsierend(?:e[nmrs]?)?\\b", "\\bbetörend(?:e[nmrs]?)?\\b", "\\bunvergesslich(?:e[nmrs]?)?\\b", "\\bmagisch(?:e[nmrs]?)?\\b", "\\bzauberhaft(?:e[nmrs]?)?\\b", "\\bTeppich aus\\b", "\\bSymphonie (?:aus|der|von)\\b", "\\bSinfonie (?:aus|der|von)\\b", "\\bTanz (?:aus|der|von|zwischen)\\b", "\\bKaleidoskop\\b", "\\bMosaik (?:aus|der|von)\\b", "\\bgeheimnisvoll(?:e[nmrs]?)? Zauber\\b", "\\beingebettet in\\b", "\\bim Herzen (?:von|der|des)\\b", "\\bwie ein (?:leuchtende[rs]|funkelnde[rs]|strahlende[rs]) \\w+"],
+     "en": ["\\btapestry\\b", "\\bsymphony of\\b", "\\bvibrant\\b", "\\bbreathtaking\\b", "\\bnestled\\b", "\\bmesmeri[sz]ing\\b", "\\bkaleidoscope\\b", "\\ba dance of\\b", "\\bin the heart of\\b", "\\bbustling\\b", "\\benchanting\\b"]},
+
+    {"nr": 4, "id": "leere-adverbien", "name": "Leere Adverbien", "gruppe": "Wortwahl", "kurz": "Adverbien, die Wichtigkeit signalisieren, ohne sie zu begründen: grundsätzlich, letztlich, im Grunde.",
+     "de": ["\\bgrundsätzlich\\b", "\\bletztendlich\\b", "\\bschlussendlich\\b", "\\bletztlich\\b", "\\bim Grunde(?: genommen)?\\b", "\\bim Wesentlichen\\b", "\\bwesentlich\\b(?=,)", "\\bgrundlegend\\b(?= (?:wichtig|anders|neu))", "\\bwirklich\\b(?= (?:wichtig|entscheidend|zentral))", "\\bdefinitiv\\b", "\\bschlichtweg\\b", "\\bschlicht und ergreifend\\b"],
+     "en": ["\\bimportantly\\b", "\\bessentially\\b", "\\bfundamentally\\b", "\\bultimately\\b", "\\binherently\\b", "\\bcrucially\\b", "\\bnotably\\b", "\\btruly\\b", "\\bundeniably\\b"]},
+
+    {"nr": 5, "id": "fast-absicherung", "name": "„Fast“-Absicherung", "gruppe": "Wortwahl", "kurz": "„Fast immer“, „nahezu“, „quasi“: Absicherung statt einer klaren Aussage.",
+     "de": ["\\bfast (?:immer|nie|sicher|jede[rsnm]?|alle)\\b", "\\bnahezu\\b", "\\bquasi\\b", "\\bpraktisch (?:immer|nie|jede[rsnm]?|alle)\\b", "\\bso gut wie (?:immer|nie|sicher|alle)\\b"],
+     "en": ["\\balmost (?:always|never|certainly|every|all)\\b", "\\bvirtually (?:all|every|always|never)\\b", "\\bnearly (?:always|every|all)\\b"]},
+
+    {"nr": 6, "id": "kopula-ausweichen", "name": "Kopula-Ausweichen", "gruppe": "Wortwahl", "kurz": "„Fungiert als“, „dient als“, „stellt dar“, „verfügt über“ statt „ist“ und „hat“.",
+     "de": ["\\bfungier(?:t|en|te|ten) (?:\\w+ ){0,3}als\\b", "\\bdien(?:t|en|te|ten) (?:\\w+ ){0,3}als\\b", "\\bstell(?:t|en|te|ten) (?:\\w+ ){0,4}dar\\b", "\\bverfüg(?:t|en|te|ten) über\\b", "\\bsteht als\\b", "\\bgilt als (?:Paradebeispiel|Inbegriff|Sinnbild|Zeugnis)\\b", "\\bpräsentier(?:t|en) sich als\\b", "\\berweis(?:t|en) sich als\\b"],
+     "en": ["\\bserves? as\\b", "\\bstands? as\\b", "\\bacts? as\\b", "\\bfunctions? as\\b", "\\bboasts?\\b", "\\bis a testament to\\b"]},
+
+    {"nr": 7, "id": "nominalstil", "name": "Nominalstil", "gruppe": "Wortwahl", "code": true, "kurz": "Sätze aus Substantiven auf -ung, -heit, -keit und Funktionsverben: „zur Umsetzung bringen“ statt „umsetzen“.",
+     "de": ["\\bzur (?:Umsetzung|Anwendung|Verfügung|Durchführung|Kenntnis|Sprache) (?:zu )?(?:bringen|kommen|gelangen|stellen|nehmen)\\b", "\\bBerücksichtigung finden\\b", "\\beine Entscheidung treffen\\b", "\\bin Erwägung ziehen\\b", "\\bUnterstützung leisten\\b", "\\bVerwendung finden\\b", "\\beinen Beitrag (?:zur|zum) \\w+ leisten\\b"],
+     "en": ["\\bmake a decision\\b", "\\bprovide assistance\\b", "\\bconduct an (?:analysis|investigation)\\b", "\\bthe implementation of\\b"]},
+
+    {"nr": 8, "id": "anglizismen", "name": "Lehnübersetzungen", "gruppe": "Wortwahl", "kurz": "Englische Wendungen wörtlich übersetzt: „macht Sinn“, „am Ende des Tages“, „einen Unterschied machen“.",
+     "de": ["\\bmacht (?:absolut |total |keinen |wenig |viel )?Sinn\\b", "\\bmachen (?:absolut |total |keinen )?Sinn\\b", "\\bam Ende des Tages\\b", "\\beinen Unterschied machen\\b", "\\bmacht einen Unterschied\\b", "\\bin (?:20\\d\\d)\\b(?= (?:wird|werden|hat|haben|ist|sind))", "\\bnicht wirklich\\b", "\\bdas (?:ist|war) ein Ding\\b", "\\bauf einer täglichen Basis\\b", "\\bauf täglicher Basis\\b", "\\bwas ich (?:dir|euch) sagen kann\\b", "\\bdie gute Nachricht\\b", "\\bich bin (?:begeistert|aufgeregt), (?:anzukündigen|zu teilen)\\b", "\\bich freue mich (?:sehr |riesig )?(?:anzukündigen|bekanntzugeben|zu teilen)\\b"],
+     "en": []},
+
+    {"nr": 9, "id": "synonym-karussell", "name": "Synonym-Karussell", "gruppe": "Wortwahl", "urteil": true, "kurz": "Dieselbe Sache bekommt in jedem Satz einen neuen Namen: die Studie, die Untersuchung, die Analyse, die Erhebung.",
+     "de": [], "en": []},
+
+    {"nr": 10, "id": "epochen-eroeffnung", "name": "Epochen-Eröffnung", "gruppe": "Rahmung und Bilder", "kurz": "„In der heutigen schnelllebigen Welt“, „Im Zeitalter der KI“: ein Anlauf, bevor der Text etwas sagt.",
+     "de": ["\\bin der heutigen (?:schnelllebigen |digitalen |modernen |vernetzten )?(?:Welt|Zeit|Gesellschaft|Arbeitswelt)\\b", "\\bin einer (?:sich )?(?:ständig|stetig|rasant|immer schneller) (?:wandelnden|verändernden|drehenden) Welt\\b", "\\bim (?:digitalen )?Zeitalter (?:der|des|von)\\b", "\\bin Zeiten (?:von|der|des)\\b", "\\bheutzutage\\b", "\\bseit (?:jeher|Anbeginn)\\b", "\\bschon immer haben Menschen\\b", "\\bmehr denn je\\b"],
+     "en": ["\\bin today'?s (?:fast-paced |digital |modern |ever-changing )?(?:world|landscape|age|era)\\b", "\\bin an (?:era|age) (?:of|where)\\b", "\\bin the (?:digital )?age of\\b", "\\bnow more than ever\\b", "\\bsince the dawn of\\b", "\\bin a world where\\b"]},
+
+    {"nr": 11, "id": "metaphern-kruecke", "name": "Metaphern-Krücke", "gruppe": "Rahmung und Bilder", "kurz": "Abgegriffene Bilder: zweischneidiges Schwert, Spitze des Eisbergs, Nordstern, Reise, Kompass.",
+     "de": ["\\bzweischneidige[sn]? Schwert\\b", "\\bSpitze des Eisbergs\\b", "\\bNordstern\\b", "\\bKompass\\b", "\\bReise\\b(?= (?:zu|in|durch|hin))", "\\b(?:die|eine|unsere|deine|eure|ihre|seine) Reise\\b(?! nach| ans| an die| in den Urlaub)", "\\bDreh- und Angelpunkt\\b", "\\bHerzstück\\b", "\\bRückgrat\\b", "\\bSchlüssel zum Erfolg\\b", "\\bSchlüssel (?:zu|für)\\b", "\\bBaustein(?:e)? (?:für|des|der)\\b", "\\bFundament (?:für|des|der)\\b", "\\bin den Startlöchern\\b", "\\bWeichen (?:stellen|gestellt)\\b", "\\bTür(?:en)? (?:öffnen|öffnet|aufstoßen)\\b", "\\bauf dem Vormarsch\\b", "\\bin aller Munde\\b", "\\bLeuchtturm\\b"],
+     "en": ["\\bdouble-edged sword\\b", "\\btip of the iceberg\\b", "\\bnorth star\\b", "\\bjourney\\b", "\\bcornerstone\\b", "\\bbackbone\\b", "\\bkey to success\\b", "\\bpave the way\\b", "\\bopen(?:s)? (?:the )?doors?\\b", "\\bat the heart of\\b", "\\bbeacon\\b", "\\broadmap\\b"]},
+
+    {"nr": 12, "id": "wiederkehrendes-bild", "name": "Wiederkehrendes Bild", "gruppe": "Rahmung und Bilder", "urteil": true, "kurz": "Dasselbe Bild taucht wieder und wieder auf, bis es keine Wahl mehr ist, sondern ein Tick.",
+     "de": [], "en": []},
+
+    {"nr": 13, "id": "bedeutungs-aufblaehung", "name": "Bedeutungs-Aufblähung", "gruppe": "Rahmung und Bilder", "kurz": "Alles wird historisch, wegweisend, ein Zeugnis: Bedeutung und Tragweite behauptet statt belegt.",
+     "de": ["\\bweitreichende(?:n)? (?:Folgen|Implikationen|Auswirkungen)\\b", "\\bgrößeren Zusammenhang\\b", "\\b(?:ist|steht) (?:ein |als )?(?:lebendiges )?Zeugnis\\b", "\\bspielt eine (?:entscheidende|zentrale|wichtige|wesentliche|bedeutende|tragende) Rolle\\b", "\\bunterstreicht die Bedeutung\\b", "\\bsymbolisier(?:t|en)\\b", "\\bmarkiert einen Wendepunkt\\b", "\\bein Meilenstein\\b", "\\bhistorische(?:n|r)? (?:Moment|Wendepunkt|Chance)\\b", "\\bwird (?:die Welt|alles|unsere Gesellschaft) (?:für immer )?verändern\\b", "\\b(?:die Welt|alles) (?:für immer )?verändern (?:wird|werden)\\b", "\\bnichts weniger als\\b", "\\bdie Zukunft (?:der|des|von) \\w+ (?:steht|hängt)\\b", "\\bes geht um alles\\b", "\\bnachhaltig(?:e[nmrs]?)? (?:prägen|geprägt|verändern)\\b"],
+     "en": ["\\bbroader implications\\b", "\\bplays? a (?:crucial|pivotal|vital|key|significant) role\\b", "\\bstands? as a testament\\b", "\\bmarks? a turning point\\b", "\\bunderscores? the importance\\b", "\\bwill change (?:the world|everything)\\b", "\\bnothing less than\\b", "\\benduring legacy\\b", "\\bleaves? a lasting (?:impact|legacy)\\b"]},
+
+    {"nr": 14, "id": "konzept-label", "name": "Erfundenes Konzeptlabel", "gruppe": "Rahmung und Bilder", "kurz": "Ein ausgedachter Fachbegriff mit Artikel: „das Vertrauensparadox“, „die Aufmerksamkeitsfalle“.",
+     "de": ["\\b(?:das|die|der|dieses|diese|dieser) [A-ZÄÖÜ][a-zäöüß]{3,}(?:paradox(?:on)?|vakuum|spirale|dilemma|syndrom|lücke)\\b", "\\b(?:das|die|der) [A-ZÄÖÜ][a-zäöüß]+-(?:Paradox(?:on)?|Falle|Lücke|Spirale|Dilemma|Vakuum|Effekt|Syndrom)\\b", "\\b(?:das|die|der) (?:sogenannte[nr]?|so genannte[nr]?) [A-ZÄÖÜ][a-zäöüß]+(?:-[A-ZÄÖÜ][a-zäöüß]+)?(?:paradox|falle|lücke|effekt)\\b"],
+     "en": ["\\bthe [a-z]+ (?:paradox|trap|vacuum|spiral|creep|cliff|dilemma|tax)\\b"]},
+
+    {"nr": 15, "id": "analogie-parade", "name": "Analogie-Parade", "gruppe": "Rahmung und Bilder", "code": true, "kurz": "Netflix, Uber, Airbnb, Kodak, Buchdruck: berühmte Namen im Stakkato als geliehene Autorität.",
+     "de": ["\\bwie (?:damals )?(?:der Buchdruck|die Dampfmaschine|die Elektrizität|das Internet|das Smartphone)\\b"],
+     "en": ["\\blike (?:the printing press|the steam engine|electricity|the internet)\\b"]},
+
+    {"nr": 16, "id": "correctio", "name": "Correctio", "gruppe": "Satzbau", "kurz": "„Nicht X, sondern Y“, „Es geht nicht um X, es geht um Y“: erst verneinen, dann umdeuten. Das Kennzeichen schlechthin.",
+     "de": ["\\bnicht nur\\b[^.!?\\n]{1,90}?\\bsondern (?:auch\\b)?", "\\bes geht nicht (?:um|darum)\\b[^.!?\\n]{1,100}?[.,;:]\\s*(?:es geht |sondern )(?:um|darum)\\b", "\\b(?:das|es|dies) ist (?:kein|keine|nicht)\\b[^.!?\\n]{1,60}?[.,;]\\s*(?:es|das|dies) ist\\b", "\\bnicht\\b[^.!?\\n]{1,60}?,\\s*sondern\\b", "(?:^|[.!?]\\s+)(?:Nicht|Kein|Keine)\\b[^.!?\\n]{1,60}[.!]\\s+(?:Sondern|Sondern:)\\b", "\\bweniger\\b[^.!?\\n]{1,50}?,\\s*(?:sondern |als )?(?:vielmehr|mehr)\\b"],
+     "en": ["\\bnot (?:just|only|merely|simply)\\b[^.!?\\n]{1,90}?\\bbut\\b", "\\b(?:it'?s|this is|that'?s|it is|isn'?t) not (?:about )?[^.!?\\n]{1,60}?[,;.]\\s*(?:it'?s|but|this is|it is)\\b", "\\bisn'?t (?:about|just)\\b[^.!?\\n]{1,60}?[,;.]\\s*it'?s\\b", "\\brather than\\b"]},
+
+    {"nr": 17, "id": "negations-countdown", "name": "Negations-Countdown", "gruppe": "Satzbau", "code": true, "kurz": "„Kein Hype. Keine Floskeln. Nur Ergebnisse.“ Mehrere Verneinungen in Folge, bevor die Pointe kommt.",
+     "de": ["\\b(?:Kein|Keine|Ohne)\\b[^.!?\\n]{1,40}[.!]\\s+(?:Kein|Keine|Ohne)\\b[^.!?\\n]{1,40}[.!]\\s+(?:Nur|Einfach|Sondern|Stattdessen)\\b"],
+     "en": ["\\b(?:No|Not)\\b[^.!?\\n]{1,40}[.!]\\s+(?:No|Not)\\b[^.!?\\n]{1,40}[.!]\\s+(?:Just|Only|Simply)\\b"]},
+
+    {"nr": 18, "id": "trikolon", "name": "Trikolon", "gruppe": "Satzbau", "code": true, "kurz": "Immer drei: „schnell, einfach und sicher“. Auch wenn es zwei oder vier Dinge gibt.",
+     "de": [], "en": []},
+
+    {"nr": 19, "id": "gedankenstrich", "name": "Gedankenstrich-Inflation", "gruppe": "Satzbau", "code": true, "kurz": "Der Gedankenstrich als Allzweck-Zeichen, wo Komma, Doppelpunkt, Klammer oder Punkt passen.",
+     "de": [], "en": []},
+
+    {"nr": 20, "id": "doppelpunkt-enthuellung", "name": "Doppelpunkt-Enthüllung", "gruppe": "Satzbau", "code": true, "kurz": "Kurzer Satzanfang, Doppelpunkt, dann die lange Erklärung: „Das Ergebnis: …“, „Die Wahrheit ist: …“.",
+     "de": ["\\b(?:Die Wahrheit|Das Ergebnis|Der Grund|Die Lösung|Das Problem|Die Antwort|Der Trick|Das Geheimnis|Die Lektion|Mein Fazit|Die Folge)(?: ist| war)?:\\s"],
+     "en": ["\\b(?:The truth|The result|The reason|The solution|The problem|The answer|The trick|The secret|The lesson)(?: is| was)?:\\s"]},
+
+    {"nr": 21, "id": "hypophora", "name": "Hypophora", "gruppe": "Satzbau", "code": true, "kurz": "Rhetorische Frage, sofort selbst beantwortet: „Was bedeutet das? Es bedeutet …“, „Das Ergebnis? Ein Desaster.“",
+     "de": ["\\b(?:Was|Warum|Wieso|Weshalb|Wie) (?:bedeutet|heißt|zeigt|lernen wir aus) (?:das|dies|uns das)(?: für \\w+)?\\?", "\\bUnd (?:das )?(?:Beste|Ergebnis|Fazit)\\?"],
+     "en": ["\\bWhat does (?:this|that) mean(?: for \\w+)?\\?", "\\bThe (?:result|answer|catch|best part)\\?"]},
+
+    {"nr": 22, "id": "stakkato", "name": "Stakkato", "gruppe": "Satzbau", "code": true, "kurz": "Drei und mehr sehr kurze Sätze im Gleichschritt, oft ohne Verb: „Weniger Meetings. Mehr Fokus. Bessere Ergebnisse.“",
+     "de": [], "en": []},
+
+    {"nr": 23, "id": "anapher", "name": "Anapher", "gruppe": "Satzbau", "code": true, "kurz": "Drei und mehr Sätze in Folge mit demselben Anfang: „Wir glauben … Wir glauben … Wir glauben …“",
+     "de": [], "en": []},
+
+    {"nr": 24, "id": "partizip-anhaengsel", "name": "Partizip-Anhängsel", "gruppe": "Satzbau", "kurz": "Ein angehängter Halbsatz behauptet Bedeutung: „…, was die Bedeutung von X unterstreicht“, „…, und zeigt damit, wie …“.",
+     "de": [",\\s*was (?:die|den|das|deren|dessen) [^.!?\\n]{1,60}?(?:unterstreicht|verdeutlicht|hervorhebt|betont|widerspiegelt|zeigt)\\b", ",\\s*(?:und )?(?:unterstreicht|verdeutlicht|betont|zeigt|unterstreichen|verdeutlichen) (?:damit|so|dadurch)\\b", "\\b(?:unterstreichend|hervorhebend|verdeutlichend|widerspiegelnd|gewährleistend|ermöglichend)\\b", ",\\s*was (?:zeigt|verdeutlicht|unterstreicht), (?:wie|dass)\\b"],
+     "en": [",\\s*(?:highlighting|underscoring|emphasi[sz]ing|showcasing|reflecting|demonstrating|signal(?:l)?ing|illustrating|cementing|solidifying|ensuring)\\b"]},
+
+    {"nr": 25, "id": "absicherungs-stapel", "name": "Absicherungs-Stapel", "gruppe": "Satzbau", "code": true, "kurz": "Drei Absicherungen in einem Satz: „könnte möglicherweise unter Umständen“.",
+     "de": [], "en": []},
+
+    {"nr": 26, "id": "klammer-nuance", "name": "Klammer-Nuance", "gruppe": "Satzbau", "code": true, "kurz": "Einschübe in Klammern, die Nuance vorführen, ohne das Argument zu ändern: „(zumindest in den meisten Fällen)“.",
+     "de": [], "en": []},
+
+    {"nr": 27, "id": "kontrast-ueberfluss", "name": "Überflüssiger Kontrast", "gruppe": "Satzbau", "kurz": "„Im Gegensatz zu“, „anders als“, „während andere“: ein Gegensatz, der nur wiederholt, was schon klar ist.",
+     "de": ["\\bim Gegensatz zu\\b", "\\banders als (?:viele|die meisten|andere|herkömmliche|klassische)\\b", "\\bwährend (?:viele|die meisten|andere) (?:noch )?\\w+", "\\bim Unterschied zu\\b"],
+     "en": ["\\bwhereas\\b", "\\bas opposed to\\b", "\\bunlike (?:many|most|other|traditional)\\b", "\\bwhile (?:many|most|others)\\b"]},
+
+    {"nr": 28, "id": "nachklapp", "name": "Nachklapp", "gruppe": "Satzbau", "urteil": true, "kurz": "Der Satz hat seinen Punkt gemacht und redet weiter, um ihn noch einmal zu sagen.",
+     "de": [], "en": []},
+
+    {"nr": 29, "id": "scheinspanne", "name": "Scheinspanne", "gruppe": "Satzbau", "kurz": "„Von Start-ups bis zu Konzernen“, „von A bis Z“: eine Spanne ohne echte Skala.",
+     "de": ["\\bvon\\s+(?!\\d)(?:[A-Za-zÄÖÜäöüß-]+\\s+){0,3}?[A-Za-zÄÖÜäöüß-]+\\s+bis\\s+(?:hin\\s+)?(?:zu[rm]?|zu den)\\s+", "\\bvon A bis Z\\b", "\\bkommt nicht von ungefähr\\b"],
+     "en": ["\\bfrom\\s+(?!\\d)(?:[a-z-]+\\s+){0,3}?[a-z-]+\\s+to\\s+(?!\\d)(?:[a-z-]+\\s+){0,3}?[a-z-]+(?:,)?\\s+and everything in between\\b", "\\bdoesn'?t (?:emerge|come) (?:from|out of) nowhere\\b"]},
+
+    {"nr": 30, "id": "gleichtakt", "name": "Gleichtakt", "gruppe": "Satzbau", "code": true, "kurz": "Alle Sätze fast gleich lang, alle Absätze gleich gebaut: ein Metronom statt einer Stimme.",
+     "de": [], "en": []},
+
+    {"nr": 31, "id": "raeuspern", "name": "Räuspern", "gruppe": "Rhetorik", "urteil": true, "kurz": "Ein erster Absatz, der nichts sagt. Der Text beginnt eigentlich im zweiten.",
+     "de": [], "en": []},
+
+    {"nr": 32, "id": "meta-hinweis", "name": "Meta-Hinweis", "gruppe": "Rhetorik", "kurz": "„Es ist wichtig zu beachten, dass …“: sagt dem Leser, was er denken soll, bevor die Aussage kommt.",
+     "de": ["\\bes ist (?:wichtig|entscheidend|erwähnenswert|bemerkenswert|wesentlich) (?:zu (?:beachten|betonen|erwähnen|verstehen|wissen|bedenken)|festzuhalten|hervorzuheben)\\b", "\\bes sei (?:darauf hingewiesen|angemerkt|betont|erwähnt)\\b", "\\ban dieser Stelle sei\\b", "\\bes lohnt sich, (?:hervorzuheben|zu erwähnen|zu betonen)\\b", "\\bes sollte (?:beachtet|betont|erwähnt|hervorgehoben) werden\\b", "\\bes ist kein Geheimnis, dass\\b", "\\bes lässt sich nicht leugnen\\b", "\\bwichtig (?:zu wissen|ist dabei|dabei ist)\\b"],
+     "en": ["\\bit'?s (?:important|worth|crucial|essential) (?:to (?:note|remember|mention|understand|highlight)|noting|mentioning)\\b", "\\bit should be noted\\b", "\\bit is worth noting\\b", "\\bit'?s no secret that\\b", "\\bneedless to say\\b"]},
+
+    {"nr": 33, "id": "lehrer-modus", "name": "Lehrer-Modus", "gruppe": "Rhetorik", "kurz": "„Schauen wir uns das genauer an“, „Lass uns das aufschlüsseln“, „Stell dir das wie … vor“: Leserführung statt Inhalt.",
+     "de": ["\\b(?:schauen|sehen|werfen) wir (?:uns )?(?:einen (?:genaueren |kurzen )?Blick|das (?:genauer|näher)|uns an)\\b", "\\blass(?:t)? uns (?:das |einen Blick |gemeinsam )?(?:aufschlüsseln|anschauen|ansehen|eintauchen|genauer betrachten|werfen)\\b", "\\bbrechen wir (?:das|es) herunter\\b", "\\bstell (?:dir|euch) (?:das|es) (?:so |wie )\\b", "\\bman kann sich das (?:so )?vorstellen wie\\b", "\\bhier ist, was (?:du|Sie|ihr) wissen (?:musst|müssen|müsst)\\b", "\\bim Folgenden (?:werden wir|schauen wir|erfährst du|erfahren Sie)\\b", "\\bkurz gesagt\\b", "\\bmit anderen Worten\\b", "\\bvereinfacht gesagt\\b"],
+     "en": ["\\blet'?s (?:break (?:this|it) down|unpack|dive (?:in|into)|take a (?:closer )?look|explore)\\b", "\\bthink of it (?:as|like)\\b", "\\bhere'?s what you need to know\\b", "\\bin other words\\b", "\\bsimply put\\b", "\\bput simply\\b"]},
+
+    {"nr": 34, "id": "falsche-spannung", "name": "Falsche Spannung", "gruppe": "Rhetorik", "kurz": "„Und jetzt kommt's“, „Der Clou:“, „Hier wird es spannend“: Spannung behaupten statt erzeugen.",
+     "de": ["\\bund jetzt kommt'?s\\b", "\\bder Clou\\b", "\\bhier wird(?:'s| es) (?:spannend|interessant)\\b", "\\bjetzt wird(?:'s| es) (?:spannend|interessant)\\b", "\\bdas Beste (?:daran|kommt)\\b", "\\baber (?:hier|da) ist der Haken\\b", "\\bder Haken an der Sache\\b", "\\bSpoiler(?: Alert)?:", "\\bund das ist der Punkt\\b", "\\bhier ist das Ding\\b", "\\bdie Wahrheit ist\\b", "\\bdie unbequeme Wahrheit\\b"],
+     "en": ["\\bhere'?s the (?:kicker|thing|catch|twist|deal)\\b", "\\bhere'?s where it gets interesting\\b", "\\bbut here'?s the\\b", "\\bthe truth is\\b", "\\bspoiler(?: alert)?:", "\\bplot twist\\b"]},
+
+    {"nr": 35, "id": "stell-dir-vor", "name": "„Stell dir vor“", "gruppe": "Rhetorik", "kurz": "„Stell dir eine Welt vor, in der …“: eine Einladung zum Träumen statt des Arguments.",
+     "de": ["\\bstell(?:t|en Sie)? (?:dir|euch|sich) (?:mal )?(?:eine Welt|eine Zukunft|vor, (?:dass|du|wie|was))\\b", "\\bstell(?:t|en Sie)? (?:dir|euch|sich) (?:mal )?vor\\b", "\\bhast du dich (?:jemals|je|schon einmal|schon mal) gefragt\\b", "\\bhaben Sie sich (?:jemals|je|schon einmal) gefragt\\b"],
+     "en": ["\\bimagine (?:a world|a future|if you|what would|that)\\b", "\\bhave you ever wondered\\b", "\\bpicture this\\b"]},
+
+    {"nr": 36, "id": "vage-autoritaet", "name": "Vage Autorität", "gruppe": "Rhetorik", "kurz": "„Studien zeigen“, „Experten sind sich einig“: eine Quelle ohne Namen.",
+     "de": ["\\b(?:Studien|Untersuchungen|Umfragen|Analysen|Forschungen?) (?:zeigen|belegen|beweisen|legen nahe|deuten darauf hin)\\b", "\\b(?:Experten|Fachleute|Kritiker|Beobachter|Analysten|Wissenschaftler|Forscher) (?:sind sich einig|sagen|warnen|betonen|argumentieren|meinen|gehen davon aus)\\b", "\\bviele (?:Experten|Fachleute|Menschen) (?:sagen|glauben|meinen|sind der Meinung)\\b", "\\b(?:manche|einige) (?:sagen|argumentieren|behaupten|meinen)\\b", "\\bes heißt, dass\\b", "\\bBranchen(?:berichte|kenner|experten) (?:zeigen|sagen|gehen davon aus)\\b", "\\bwie (?:Studien|Experten) zeigen\\b", "\\bman sagt\\b"],
+     "en": ["\\b(?:studies|research|surveys|reports) (?:show|suggest|indicate|have shown)\\b", "\\b(?:experts|critics|observers|analysts|scientists|researchers) (?:agree|argue|say|note|warn|believe)\\b", "\\bmany (?:experts|people) (?:believe|say|argue)\\b", "\\bsome (?:argue|say|believe)\\b", "\\bit is (?:widely )?(?:believed|said|thought)\\b"]},
+
+    {"nr": 37, "id": "trotz-herausforderungen", "name": "„Trotz aller Herausforderungen“", "gruppe": "Rhetorik", "kurz": "„Trotz einiger Herausforderungen …“: ein Zugeständnis, das nichts benennt.",
+     "de": ["\\btrotz (?:aller|einiger|dieser|der|mancher|gewisser|bestehender|zahlreicher)? ?(?:Herausforderungen|Hürden|Schwierigkeiten|Einschränkungen|Hindernisse|Rückschläge)\\b", "\\bbei allen (?:Herausforderungen|Schwierigkeiten)\\b", "\\bnicht ohne (?:Herausforderungen|Schwierigkeiten|Hürden)\\b", "\\bbirgt (?:sowohl )?(?:Chancen als auch Risiken|Risiken und Chancen)\\b"],
+     "en": ["\\bdespite (?:its|these|the|some|many|all)? ?(?:challenges|obstacles|limitations|setbacks|hurdles)\\b", "\\bnot without (?:its )?(?:challenges|flaws)\\b", "\\bboth opportunities and (?:challenges|risks)\\b"]},
+
+    {"nr": 38, "id": "ausgewogenheits-reflex", "name": "Ausgewogenheits-Reflex", "gruppe": "Rhetorik", "kurz": "Jede Aussage wird sofort wieder relativiert: „Gleichzeitig darf man nicht vergessen …“.",
+     "de": ["\\bgleichzeitig (?:darf|sollte) man (?:aber )?nicht (?:vergessen|übersehen|außer Acht lassen)\\b", "\\bandererseits\\b", "\\bauf der anderen Seite\\b", "\\bnatürlich gibt es auch\\b", "\\bman sollte (?:aber |jedoch )?(?:auch )?(?:bedenken|berücksichtigen)\\b", "\\bwie so oft liegt die Wahrheit\\b", "\\bes kommt (?:ganz )?darauf an\\b", "\\bhat (?:sowohl )?Vor- und Nachteile\\b"],
+     "en": ["\\bon the other hand\\b", "\\bthat (?:said|being said)\\b", "\\bat the same time,? (?:it'?s|we must)\\b", "\\bthe truth (?:lies|is) somewhere in (?:the )?between\\b", "\\bit depends\\b", "\\bpros and cons\\b"]},
+
+    {"nr": 39, "id": "gespielte-offenheit", "name": "Gespielte Offenheit", "gruppe": "Rhetorik", "kurz": "„Ehrlich gesagt“, „Seien wir ehrlich“, „Ich gebe zu“: Ehrlichkeit als Pose.",
+     "de": ["\\behrlich gesagt\\b", "\\bseien wir (?:mal )?ehrlich\\b", "\\bganz ehrlich\\b", "\\bich (?:muss|will) (?:ehrlich sein|zugeben|gestehen)\\b", "\\bich gebe (?:es )?zu\\b", "\\bHand aufs Herz\\b", "\\bunter uns gesagt\\b", "\\bich verrate (?:dir|euch|Ihnen) (?:ein Geheimnis|etwas)\\b"],
+     "en": ["\\bI'?ll be honest\\b", "\\blet'?s be (?:real|honest)\\b", "\\bto be honest\\b", "\\bhonestly,\\b", "\\bI(?:'ll| have to| must) admit\\b", "\\bfull disclosure\\b"]},
+
+    {"nr": 40, "id": "anbiederung", "name": "Anbiederung und Empathie-Theater", "gruppe": "Rhetorik", "kurz": "„Gute Frage!“, „Ich verstehe, dass das schwierig sein kann“: Lob und Mitgefühl, das zu jedem Thema passt.",
+     "de": ["\\b(?:Gute|Tolle|Super|Ausgezeichnete|Spannende|Hervorragende) Frage\\b", "\\bwas für eine (?:spannende|tolle|gute|interessante) (?:Frage|Idee|Überlegung)\\b", "\\bdu hast (?:völlig|absolut|vollkommen) recht\\b", "\\bSie haben (?:völlig|absolut|vollkommen) recht\\b", "\\bich verstehe (?:vollkommen|absolut|gut), dass\\b", "\\bdas (?:kann|muss) (?:sehr |wirklich )?(?:schwierig|frustrierend|belastend|überwältigend) sein\\b", "\\bdeine Gefühle sind (?:völlig )?(?:berechtigt|valide|nachvollziehbar)\\b", "\\bdu bist (?:damit )?nicht allein\\b"],
+     "en": ["\\b(?:great|excellent|fantastic|good) question\\b", "\\byou'?re (?:absolutely|completely|totally) right\\b", "\\bI (?:completely |totally )?understand (?:that|how) (?:this|it) can be\\b", "\\bthis can be (?:really |very )?(?:difficult|frustrating|overwhelming)\\b", "\\byour feelings are valid\\b", "\\byou'?re not alone\\b"]},
+
+    {"nr": 41, "id": "konnektoren-sucht", "name": "Konnektoren-Sucht", "gruppe": "Struktur und Format", "code": true, "kurz": "Absatz um Absatz beginnt mit „Darüber hinaus“, „Zudem“, „Ferner“, „Außerdem“.",
+     "de": [], "en": []},
+
+    {"nr": 42, "id": "aufsatz-schluss", "name": "Aufsatz-Schluss", "gruppe": "Struktur und Format", "kurz": "„Zusammenfassend lässt sich sagen“, „Wie wir gesehen haben“, „In diesem Abschnitt“: Vorschau und Rückblick statt Inhalt.",
+     "de": ["\\bzusammenfassend (?:lässt sich (?:sagen|festhalten)|kann man sagen|gesagt)?\\b", "\\babschließend (?:lässt sich|kann man|bleibt)\\b", "(?m)^(?:#+\\s*)?(?:Fazit|Zusammenfassung)\\s*:?\\s*$", "(?m)^Fazit:", "\\bunterm Strich\\b", "\\bwie (?:wir|bereits|oben|eingangs) (?:gesehen|erwähnt|beschrieben|gezeigt)(?: haben)?\\b", "\\bwie bereits erwähnt\\b", "\\bin diesem (?:Abschnitt|Artikel|Beitrag|Kapitel) (?:werden wir|schauen wir|erfährst du|erfahren Sie|geht es um)\\b", "\\bim nächsten Abschnitt\\b", "\\blange Rede, kurzer Sinn\\b", "\\bauf den Punkt gebracht\\b", "\\bletztendlich zeigt sich\\b", "\\bdie Zukunft (?:bleibt|wird) spannend\\b", "\\bdie Zukunft sieht (?:rosig|vielversprechend|hell) aus\\b"],
+     "en": ["\\bin conclusion\\b", "\\bto (?:sum up|summari[sz]e)\\b", "\\bin summary\\b", "\\bat the end of the day\\b", "\\bas we'?ve (?:seen|discussed)\\b", "\\bin this (?:section|article|post),? we(?:'ll| will)\\b", "\\bthe future (?:looks bright|is bright)\\b"]},
+
+    {"nr": 43, "id": "listen-reflex", "name": "Listen-Reflex", "gruppe": "Struktur und Format", "code": true, "kurz": "Listen mit genau 3, 5, 7 oder 10 Punkten, und Prosa, die eine Liste versteckt: „Erstens … Zweitens … Drittens …“",
+     "de": [], "en": []},
+
+    {"nr": 44, "id": "markdown-deko", "name": "Markdown-Deko", "gruppe": "Struktur und Format", "code": true, "kurz": "Fette Listenköpfe („- **Tempo:** …“), Fettdruck im Fließtext, Pfeile und Emojis als Gliederung.",
+     "de": [], "en": []},
+
+    {"nr": 45, "id": "dramatisches-fragment", "name": "Dramatisches Fragment", "gruppe": "Struktur und Format", "code": true, "kurz": "Ein Absatz aus zwei, drei Wörtern für falsche Dramatik: „Das war's.“, „Punkt.“, „Alles anders.“",
+     "de": [], "en": []},
+
+    {"nr": 46, "id": "ein-punkt-verwaesserung", "name": "Ein-Punkt-Verwässerung", "gruppe": "Struktur und Format", "urteil": true, "kurz": "Derselbe Gedanke in fünf Absätzen mit anderen Worten, ohne neue Information.",
+     "de": [], "en": []},
+
+    {"nr": 47, "id": "chatbot-floskeln", "name": "Chatbot-Floskeln", "gruppe": "Chatbot-Reste", "kurz": "„Ich hoffe, das hilft!“, „Gerne!“, „Lass mich wissen, wenn …“, „Als KI-Sprachmodell …“: Reste aus dem Chatfenster.",
+     "de": ["\\bich hoffe,? (?:das|dies|dieser \\w+|diese \\w+) hilft\\b", "\\bich hoffe,? (?:das|dies) war hilfreich\\b", "(?m)^(?:Gerne|Natürlich|Selbstverständlich|Klar|Sehr gern)[!.]", "\\blass(?:t|en Sie)? (?:mich|es mich|mir) wissen,? (?:ob|wenn|falls)\\b", "\\bwenn du (?:weitere|noch) Fragen hast\\b", "\\bwenn Sie (?:weitere|noch) Fragen haben\\b", "\\bmelde dich gern(?:e)?\\b", "\\bals (?:KI|KI-Sprachmodell|Sprachmodell|KI-Assistent)\\b", "\\b(?:bis zu )?meine(?:m|s)? (?:letzten )?(?:Wissensstand|Trainingsstand|Update)\\b", "\\bhier (?:ist|sind) (?:eine|ein|die|der|das) (?:überarbeitete|optimierte|verbesserte|mögliche)\\b", "\\bich kann (?:dir|Ihnen) (?:gerne|gern) (?:auch )?(?:helfen|weitere)\\b", "\\bmöchtest du, dass ich\\b", "\\bsoll ich (?:dir )?(?:noch )?(?:eine|einen|weitere)\\b"],
+     "en": ["\\bI hope this helps\\b", "(?m)^(?:Certainly|Absolutely|Of course|Sure)[!.]", "\\blet me know if\\b", "\\bfeel free to\\b", "\\bas an AI(?: language model)?\\b", "\\bas of my (?:last|latest) (?:update|training)\\b", "\\bhere'?s (?:a|an|the) (?:revised|improved|polished) version\\b", "\\bwould you like me to\\b", "\\bI'?d be happy to\\b"]},
+
+    {"nr": 48, "id": "artefakte", "name": "Technische Artefakte", "gruppe": "Chatbot-Reste", "code": true, "kurz": "Unsichtbare Zeichen, Zitiermarken wie oaicite, utm_source=chatgpt.com, Platzhalter wie [Name einfügen].",
+     "de": ["\\[(?:Name|Vorname|Nachname|Datum|Firma|Unternehmen|Ort|Link|URL|Zahl|Betrag|Produkt|Thema)(?: einfügen| hier)?\\]", "\\[(?:hier )?(?:\\w+ )?einfügen\\]", "\\bTODO:"],
+     "en": ["\\[(?:Your Name|Name|Date|Company|Insert [^\\]]{1,30}|Link|URL|Number|Product)\\]", "\\bTODO:"]}
+  ],
+  "trikolon_ausnahmen": ["Daten", "Zahlen", "Fakten", "Name", "Vorname", "Nachname", "Straße", "PLZ", "Ort", "rot", "gelb", "grün", "Jahre", "Monate", "Tage", "Stunden", "Minuten"],
+  "absicherung": {
+    "de": ["vielleicht", "möglicherweise", "eventuell", "unter Umständen", "gegebenenfalls", "wohl", "vermutlich", "scheinbar", "anscheinend", "gewissermaßen", "in gewisser Weise", "tendenziell", "potenziell", "potentiell", "könnte", "könnten", "dürfte", "dürften", "mag", "durchaus", "gewissermaßen", "irgendwie", "relativ", "eher"],
+    "en": ["perhaps", "maybe", "might", "could", "arguably", "possibly", "seemingly", "potentially", "somewhat", "likely", "may", "conceivably", "presumably"]
+  },
+  "klammer_qualifier": {
+    "de": ["zumindest", "in der Regel", "meistens", "meist", "oft", "häufig", "natürlich", "gewissermaßen", "wenn auch", "auch wenn", "in den meisten Fällen", "mehr oder weniger", "teilweise", "im Idealfall", "bis zu einem gewissen Grad", "sofern", "jedenfalls"],
+    "en": ["at least", "of course", "admittedly", "arguably", "in most cases", "usually", "often", "to some extent", "more or less", "ideally"]
+  },
+  "konnektoren": {
+    "de": ["Darüber hinaus", "Zudem", "Außerdem", "Ferner", "Des Weiteren", "Zusätzlich", "Überdies", "Ebenso", "Gleichzeitig", "Nicht zuletzt", "Hinzu kommt", "Dabei", "Folglich", "Somit", "Daher"],
+    "en": ["Furthermore", "Moreover", "Additionally", "In addition", "Also", "Likewise", "Consequently", "Thus", "Hence", "Notably"]
+  },
+  "marken": ["Netflix", "Uber", "Airbnb", "Amazon", "Apple", "Google", "Tesla", "Kodak", "Nokia", "Blockbuster", "Spotify", "Facebook", "Meta", "Microsoft", "OpenAI", "Nvidia", "Zalando", "SAP", "BlackBerry", "Quelle", "Schlecker"]
+}
