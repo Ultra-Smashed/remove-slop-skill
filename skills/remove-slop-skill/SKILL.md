@@ -1,9 +1,9 @@
 ---
-name: remove-ai-slop
+name: remove-slop-skill
 description: Entfernt 48 Formen von KI-Slop aus deutschen und englischen Texten, darunter Correctio („nicht X, sondern Y“), Trikolon, Purple Prose, Gedankenstrich-Inflation, Modewörter, Stakkato, Hypophora, Nominalstil und Chatbot-Floskeln. Findet die Stellen mit einem Python-Detektor, schreibt den Text um, ohne Inhalt oder Fakten zu ändern, und prüft das Ergebnis. Nutze den Skill, wenn jemand „KI-Slop entfernen“, „klingt nach ChatGPT“, „Text entkitschen“, „menschlicher klingen“, „remove AI slop“, „de-slop“, „humanize“ sagt oder einen Text überarbeitet haben will, der nach KI klingt.
 ---
 
-# remove-ai-slop
+# remove-slop-skill
 
 Du überarbeitest Texte so, dass die typischen Muster von KI-Texten verschwinden. Der Inhalt bleibt, die Floskeln gehen. Grundlage sind 48 Formen in sechs Gruppen: Wortwahl, Rahmung und Bilder, Satzbau, Rhetorik, Struktur und Format, Chatbot-Reste. Jede Form steht mit Beispiel in `formen.md`.
 

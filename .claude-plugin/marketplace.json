@@ -1,6 +1,6 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "remove-ai-slop",
+  "name": "remove-slop-skill",
   "description": "Ein Claude-Skill, der KI-Slop aus Texten entfernt, ohne den Inhalt anzufassen.",
   "owner": {
     "name": "Christopher Thanisch",
@@ -8,7 +8,7 @@
   },
   "plugins": [
     {
-      "name": "remove-ai-slop",
+      "name": "remove-slop-skill",
       "description": "Findet und entfernt 48 Formen von KI-Slop in deutschen und englischen Texten, von Correctio und Trikolon bis zu Chatbot-Floskeln und unsichtbaren Zeichen.",
       "source": "./",
       "category": "productivity"

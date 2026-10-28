@@ -1,4 +1,4 @@
-# remove-ai-slop
+# remove-slop-skill
 
 Ein Claude-Skill, der KI-Slop aus Texten entfernt. Er findet 48 typische Muster, von „Das ist nicht X, das ist Y“ über das ewige Dreierpaket „schnell, einfach und sicher“ bis zu „Ich hoffe, das hilft!“, und schreibt den Text so um, dass der Inhalt bleibt und die Floskeln verschwinden. Gebaut für Deutsch, Englisch geht auch.
 
@@ -9,7 +9,7 @@ Ein Python-Detektor markiert die Stellen mit Zeilennummer, Claude prüft sie im 
 Füg das in Claude ein:
 
 ```
-https://github.com/Ultra-Smashed/remove-ai-slop
+https://github.com/Ultra-Smashed/remove-slop-skill
 
 installiere den Skill
 ```
@@ -17,15 +17,15 @@ installiere den Skill
 Oder als Plugin in Claude Code:
 
 ```
-/plugin marketplace add Ultra-Smashed/remove-ai-slop
-/plugin install remove-ai-slop@remove-ai-slop
+/plugin marketplace add Ultra-Smashed/remove-slop-skill
+/plugin install remove-slop-skill@remove-slop-skill
 ```
 
 Oder den Ordner direkt kopieren:
 
 ```bash
-git clone https://github.com/Ultra-Smashed/remove-ai-slop.git
-cp -r remove-ai-slop/skills/remove-ai-slop ~/.claude/skills/
+git clone https://github.com/Ultra-Smashed/remove-slop-skill.git
+cp -r remove-slop-skill/skills/remove-slop-skill ~/.claude/skills/
 ```
 
 Ohne Claude Code kannst du `SKILL.md` und `formen.md` in einen Chat einfügen. Claude arbeitet dann nach derselben Methode, nur ohne Detektor.
@@ -45,7 +45,7 @@ Du bekommst den überarbeiteten Text und darunter eine kurze Liste: was entfernt
 Der Detektor geht auch allein:
 
 ```bash
-cd skills/remove-ai-slop
+cd skills/remove-slop-skill
 python3 slop.py text.md                      # Bericht
 python3 slop.py text.md --json               # als JSON
 python3 slop.py text.md --formen 16,18,19    # nur Correctio, Trikolon, Gedankenstrich
@@ -70,11 +70,11 @@ Mit `--strikt` endet der Aufruf mit Exit-Code 1, sobald etwas gefunden wird. Das
 
 **Chatbot-Reste:** 47 Chatbot-Floskeln, 48 Technische Artefakte (unsichtbare Zeichen, `oaicite`, `utm_source=chatgpt.com`)
 
-Jede Form steht mit Erkennungszeichen, Vorher-Nachher-Beispiel und Ausnahmen in [`formen.md`](skills/remove-ai-slop/formen.md). 43 Formen findet der Detektor über Muster. Fünf (9, 12, 28, 31, 46) erkennt nur, wer den ganzen Text liest, dafür sorgt die Anleitung in `SKILL.md`.
+Jede Form steht mit Erkennungszeichen, Vorher-Nachher-Beispiel und Ausnahmen in [`formen.md`](skills/remove-slop-skill/formen.md). 43 Formen findet der Detektor über Muster. Fünf (9, 12, 28, 31, 46) erkennt nur, wer den ganzen Text liest, dafür sorgt die Anleitung in `SKILL.md`.
 
 ## Eigene Floskeln ergänzen
 
-Alle Muster stehen in [`lexikon.json`](skills/remove-ai-slop/lexikon.json), getrennt nach `de` und `en`. Jede Form hat eine Liste regulärer Ausdrücke, Groß- und Kleinschreibung spielt keine Rolle. Neue Floskel eintragen, `python3 -m unittest discover -s tests` laufen lassen, fertig. Ausnahmen für echte Dreiergruppen („Rot, Gelb und Grün“) stehen unter `trikolon_ausnahmen`.
+Alle Muster stehen in [`lexikon.json`](skills/remove-slop-skill/lexikon.json), getrennt nach `de` und `en`. Jede Form hat eine Liste regulärer Ausdrücke, Groß- und Kleinschreibung spielt keine Rolle. Neue Floskel eintragen, `python3 -m unittest discover -s tests` laufen lassen, fertig. Ausnahmen für echte Dreiergruppen („Rot, Gelb und Grün“) stehen unter `trikolon_ausnahmen`.
 
 ## Grenzen
 

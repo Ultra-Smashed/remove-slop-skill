@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""remove-ai-slop: findet die 48 Formen von KI-Slop in einem Text (Deutsch und Englisch).
+"""remove-slop-skill: findet die 48 Formen von KI-Slop in einem Text (Deutsch und Englisch).
 
     python3 slop.py entwurf.md                  Bericht
     python3 slop.py entwurf.md --json           Bericht als JSON
@@ -460,7 +460,7 @@ def num(x):
 
 def report(res, name, lex):
     by_id = lex["_by_id"]
-    lines = ["remove-ai-slop: %s, %d Wörter, Sprache %s" % (name, res["woerter"], res["sprache"])]
+    lines = ["remove-slop-skill: %s, %d Wörter, Sprache %s" % (name, res["woerter"], res["sprache"])]
     lines.append("%d Fundstellen in %d von 48 Formen (%s je 100 Wörter)"
                  % (res["anzahl"], len(res["formen"]), num(res["dichte"])))
     current = None

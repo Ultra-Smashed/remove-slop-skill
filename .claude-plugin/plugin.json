@@ -1,5 +1,5 @@
 {
-  "name": "remove-ai-slop",
+  "name": "remove-slop-skill",
   "description": "Entfernt 48 Formen von KI-Slop aus deutschen und englischen Texten: Correctio, Trikolon, Purple Prose, Gedankenstrich-Inflation, Modewörter, Stakkato, Hypophora, Nominalstil, Chatbot-Floskeln und mehr. Mit Python-Detektor, bearbeitbarem Lexikon und Vorher-Nachher-Vergleich.",
   "version": "1.0.0",
   "author": {
@@ -7,7 +7,7 @@
     "url": "https://thanisch.co"
   },
   "homepage": "https://thanisch.co",
-  "repository": "https://github.com/Ultra-Smashed/remove-ai-slop",
+  "repository": "https://github.com/Ultra-Smashed/remove-slop-skill",
   "license": "MIT",
   "keywords": [
     "ai-slop",

@@ -17,17 +17,17 @@ def read(*parts):
 class Repo(unittest.TestCase):
     def test_layout(self):
         for rel in ("README.md", "LICENSE", ".gitignore", ".claude-plugin/plugin.json",
-                    ".claude-plugin/marketplace.json", "skills/remove-ai-slop/SKILL.md",
-                    "skills/remove-ai-slop/slop.py", "skills/remove-ai-slop/lexikon.json",
-                    "skills/remove-ai-slop/formen.md"):
+                    ".claude-plugin/marketplace.json", "skills/remove-slop-skill/SKILL.md",
+                    "skills/remove-slop-skill/slop.py", "skills/remove-slop-skill/lexikon.json",
+                    "skills/remove-slop-skill/formen.md"):
             self.assertTrue(os.path.isfile(os.path.join(ROOT, rel)), rel)
-        self.assertEqual(os.listdir(os.path.join(ROOT, "skills")), ["remove-ai-slop"])
+        self.assertEqual(os.listdir(os.path.join(ROOT, "skills")), ["remove-slop-skill"])
 
     def test_frontmatter(self):
         text = read(SKILL, "SKILL.md")
         m = re.match(r"^---\nname: (.+)\ndescription: (.+)\n---\n", text)
         self.assertTrue(m)
-        self.assertEqual(m.group(1), "remove-ai-slop")
+        self.assertEqual(m.group(1), "remove-slop-skill")
         self.assertLess(len(m.group(2)), 1024)
         for phrase in ("KI-Slop", "remove AI slop", "Correctio", "Trikolon", "Purple Prose"):
             self.assertIn(phrase, m.group(2))
@@ -53,18 +53,18 @@ class Repo(unittest.TestCase):
         readme = read(ROOT, "README.md")
         for f in LEX["formen"]:
             self.assertIn("%d %s" % (f["nr"], f["name"].split(" (")[0]), readme)
-        self.assertIn("github.com/Ultra-Smashed/remove-ai-slop", readme)
+        self.assertIn("github.com/Ultra-Smashed/remove-slop-skill", readme)
         self.assertIn("thanisch.co", readme)
 
     def test_kein_gedankenstrich_in_doku(self):
-        for rel in ("README.md", "skills/remove-ai-slop/SKILL.md"):
+        for rel in ("README.md", "skills/remove-slop-skill/SKILL.md"):
             self.assertNotIn("\u2014", read(ROOT, rel), rel)
 
     def test_plugin_json(self):
         plugin = json.loads(read(ROOT, ".claude-plugin", "plugin.json"))
         market = json.loads(read(ROOT, ".claude-plugin", "marketplace.json"))
-        self.assertEqual(plugin["name"], "remove-ai-slop")
-        self.assertEqual(market["plugins"][0]["name"], "remove-ai-slop")
+        self.assertEqual(plugin["name"], "remove-slop-skill")
+        self.assertEqual(market["plugins"][0]["name"], "remove-slop-skill")
         self.assertEqual(plugin["author"]["url"], "https://thanisch.co")
 
     def test_python38_syntax(self):
